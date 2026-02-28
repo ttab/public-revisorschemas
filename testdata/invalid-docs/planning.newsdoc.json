@@ -1,0 +1,97 @@
+{
+  "uuid": "75b99b27-a5d7-431b-921a-8661e46a025e",
+  "type": "core/planning-item",
+  "uri": "core://newscoverage/75b99b27-a5d7-431b-921a-8661e46a025e",
+  "title": "Testplanering",
+  "meta": [
+    {
+      "type": "core/planning-item",
+      "data": {
+        "end_date": "2026-02-27",
+        "start_date": "2026-02-27",
+        "tentative": "false"
+      }
+    },
+    {
+      "type": "core/newsvalue",
+      "value": "4"
+    },
+    {
+      "type": "tt/slugline",
+      "value": "testplan"
+    },
+    {
+      "type": "core/description",
+      "data": {
+        "text": "Detta ska folk få veta"
+      },
+      "role": "public"
+    },
+    {
+      "type": "core/description",
+      "data": {
+        "text": "Detta är intern information"
+      },
+      "role": "internal"
+    },
+    {
+      "id": "34861174-de05-4679-99d3-9c760505c2e1",
+      "type": "core/assignment",
+      "title": "Testtext",
+      "data": {
+        "end_date": "2026-02-27",
+        "full_day": "false",
+        "public": "true",
+        "publish_slot": "21",
+        "start": "2026-02-27T20:36:50.705Z",
+        "start_date": "2026-02-27"
+      },
+      "links": [
+        {
+          "uuid": "5f17c7fe-92d8-4bca-8891-5003d2f975b5",
+          "type": "core/article",
+          "rel": "deliverable"
+        },
+        {
+          "uuid": "56ff76b1-7f90-4303-bde6-3663f800746c",
+          "type": "core/author",
+          "title": "Hugo Wetterberg",
+          "rel": "assignee",
+          "role": "primary"
+        }
+      ],
+      "meta": [
+        {
+          "type": "tt/slugline",
+          "value": "testplan"
+        },
+        {
+          "type": "core/description",
+          "data": {
+            "text": "Info för oss internt"
+          },
+          "role": "internal"
+        },
+        {
+          "type": "core/assignment-type",
+          "value": "text"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "uuid": "956636ed-2687-4bc3-a45a-7e09d98c6eeb",
+      "type": "core/section",
+      "title": "Inrikes",
+      "rel": "section"
+    },
+    {
+      "uuid": "d18288d8-2582-4c6d-83ed-7403c61259cd",
+      "type": "core/story",
+      "title": "Presidentvalet i USA",
+      "rel": "subject"
+    }
+  ],
+  "language": "sv-se"
+}

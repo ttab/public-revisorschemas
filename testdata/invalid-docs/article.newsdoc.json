@@ -1,0 +1,111 @@
+{
+  "uuid": "5f17c7fe-92d8-4bca-8891-5003d2f975b5",
+  "type": "core/article",
+  "uri": "core://article/5f17c7fe-92d8-4bca-8891-5003d2f975b5",
+  "title": "Rubrik",
+  "content": [
+    {
+      "id": "93f3f5a9-0673-4210-b333-323a859794a0",
+      "type": "core/text",
+      "data": {
+        "text": "Rubrik"
+      },
+      "role": "heading-1"
+    },
+    {
+      "id": "1ab95ce4-7029-46d6-b5b7-0ac5499897de",
+      "type": "tt/visual",
+      "data": {
+        "html_caption": "Bildtext."
+      },
+      "links": [
+        {
+          "uri": "http://tt.se/media/image/sdlZpm8L2PMuD8",
+          "url": "https://app.stage.tt.se/media/image/sdlZpm8L2PMuD8_NormalPreview.jpg",
+          "type": "tt/picture",
+          "data": {
+            "credit": "Namn P Fotograf",
+            "height": "4757",
+            "width": "7072"
+          },
+          "rel": "self"
+        }
+      ]
+    },
+    {
+      "id": "e9740c48-75eb-4e7e-bf1f-ba02e4208b04",
+      "type": "core/text",
+      "data": {
+        "text": "Tidaholm"
+      },
+      "role": "vignette"
+    },
+    {
+      "id": "76e7243a-cdfe-48eb-aa63-0c379f682e15",
+      "type": "core/text",
+      "data": {
+        "text": "Ingress som talar för sig själv."
+      },
+      "role": "preamble"
+    },
+    {
+      "id": "052f2829-33bb-49fd-837e-9f75d0ea6ee3",
+      "type": "core/text",
+      "data": {
+        "text": "Lorem ipsum."
+      }
+    },
+    {
+      "id": "4c0d34a8-a03a-460d-be3f-564b8cf407f7",
+      "type": "core/text",
+      "data": {
+        "text": ""
+      }
+    }
+  ],
+  "meta": [
+    {
+      "type": "core/note",
+      "data": {
+        "text": "Detta är intern info"
+      },
+      "role": "internal"
+    },
+    {
+      "type": "core/note",
+      "data": {
+        "text": "Det här vill vi att kunden ska få reda på."
+      },
+      "role": "public"
+    },
+    {
+      "type": "tt/slugline",
+      "value": "testplan"
+    },
+    {
+      "type": "core/newsvalue",
+      "value": "4"
+    }
+  ],
+  "links": [
+    {
+      "uuid": "956636ed-2687-4bc3-a45a-7e09d98c6eeb",
+      "type": "core/section",
+      "title": "Inrikes",
+      "rel": "section"
+    },
+    {
+      "uuid": "d18288d8-2582-4c6d-83ed-7403c61259cd",
+      "type": "core/story",
+      "title": "Presidentvalet i USA",
+      "rel": "subject"
+    },
+    {
+      "uri": "tt://content-source/tt",
+      "type": "core/content-source",
+      "title": "TT",
+      "rel": "source"
+    }
+  ],
+  "language": "sv-se"
+}

@@ -107,18 +107,6 @@
           "attributes": {
             "uri": {"glob": ["tt://subtype/*"]}
           }
-        },
-        {
-          "name": "Content size",
-          "description": "Specifies the content sizes we can use",
-          "match": {
-            "type": {"const":"core/content-size"}
-          },
-          "attributes": {
-            "uri": {"enum":[
-              "core://content-size/article/medium"
-            ]}
-          }
         }
       ],
       "content": [
@@ -156,7 +144,6 @@
         "description": "This can be either a picture or a graphic",
         "declares": {"type":"tt/visual"},
         "data": {
-          "caption": {"allowEmpty":true},
           "html_caption": {
             "format": "html",
             "allowEmpty": true,
@@ -180,17 +167,9 @@
               }
             },
             "data": {
-              "credit": {"allowEmpty":true},
+              "credit": {},
               "height": {"format":"int"},
-              "width": {"format":"int"},
-              "hiresScale": {
-                "format": "float",
-                "optional": true,
-                "deprecated": {
-                  "label": "hires-scale",
-                  "doc": "Not supported anymore"
-                }
-              }
+              "width": {"format":"int"}
             }
           }
         ]

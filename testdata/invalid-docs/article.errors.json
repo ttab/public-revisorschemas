@@ -1,0 +1,16 @@
+[
+  {
+    "entity": [
+      {
+        "refType": "attribute",
+        "name": "role"
+      },
+      {
+        "refType": "block",
+        "kind": "meta",
+        "type": "core/note"
+      }
+    ],
+    "error": "must be \"public\""
+  }
+]

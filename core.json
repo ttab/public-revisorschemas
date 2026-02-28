@@ -1,7 +1,440 @@
 {
   "version": 1,
   "name": "core",
+  "documents": [
+    {
+      "name": "Article",
+      "description": "An editorial article",
+      "declares": "core/article",
+      "content": [
+        {"ref": "core://text"},
+        {"ref": "core://image"},
+        {"ref": "core://htmlembed"},
+        {"ref": "core://unordered-list"},
+        {"ref": "core://ordered-list"},
+        {"ref": "core://factbox"},
+        {"ref": "core://table"}
+      ],
+      "meta": [
+        {
+          "ref": "core://newsvalue",
+          "count": 1
+        },
+        {"ref": "core://note"}
+      ],
+      "links": [
+        {"ref": "core://byline"},
+        {"ref": "core://story"},
+        {"ref": "core://section"},
+        {"ref": "core://assignment"},
+        {"ref": "core://article-source"},
+        {"ref": "core://content-source"},
+        {"ref": "core://content-source/document"},
+        {"ref": "core://person"},
+        {"ref": "core://category"}
+      ]
+    },
+    {
+      "name": "Editorial information",
+      "description": "Information for editorial staff",
+      "declares": "core/editorial-info",
+      "content": [
+        {"ref": "core://text"},
+        {"ref": "core://image"},
+        {"ref": "core://unordered-list"},
+        {"ref": "core://ordered-list"},
+        {"ref": "core://factbox"}
+      ],
+      "meta": [
+        {"ref": "core://note"}
+      ],
+      "links": [
+        {"ref": "core://byline"},
+        {"ref": "core://story"},
+        {"ref": "core://section"},
+        {"ref": "core://assignment"}
+      ]
+    },
+    {
+      "name": "Place",
+      "description": "A geographical location",
+      "declares": "core/place",
+      "meta": [
+        {"ref": "core://position"},
+        {"ref": "core://place-type"}
+      ],
+      "links": [
+        {"ref": "core://place-relationship"},
+        {"ref":"core://evidence/wikidata"},
+        {"ref":"core://evidence/webpage"}
+      ]
+    },
+    {
+      "name": "Section",
+      "description": "A section for content",
+      "declares": "core/section",
+      "meta": [
+        {
+          "name": "Section metadata",
+          "description": "Machine-readable section information",
+          "declares": {"type": "core/section"},
+          "count": 1,
+          "data": {
+            "code": {
+              "description": "Machine readable code for the section"
+            }
+          }
+        },
+        {"ref": "core://colour"}
+      ]
+    },
+    {
+      "name": "Content source",
+      "description": "A content source that can be credited",
+      "declares": "core/content-source",
+      "attributes": {
+        "title": {}
+      },
+      "meta": [
+        {"ref":"core://definition"}
+      ]
+    },
+    {
+      "name": "Story",
+      "description": "An ongoing story that gets reported on",
+      "declares": "core/story",
+      "meta": [
+        {"ref":"core://definition"}
+      ]
+    },
+    {
+      "name": "Person",
+      "description": "Used to describe people",
+      "declares": "core/person",
+      "meta": [
+        {
+          "name": "Main metadata block",
+          "description": "Core person data",
+          "declares": {"type":"core/person"},
+          "count": 1,
+          "data": {
+            "firstName": {
+              "optional":true
+            },
+            "lastName": {
+              "optional":true
+            },
+            "title": {"optional":true}
+          }
+        },
+        {"ref":"core://definition"}
+      ],
+      "links": [
+        {"ref":"core://evidence/wikidata"},
+        {"ref":"core://evidence/webpage"}
+      ]
+    }
+  ],
+  "content": [
+    {
+      "id": "core://text",
+      "block": {
+        "name": "Text",
+        "description": "A standard text block",
+        "declares": {"type":"core/text"},
+        "attributes": {
+          "role": {
+            "optional":true,
+            "enumReference": "core://text-roles"
+          }
+        },
+        "data": {
+          "text":{
+            "allowEmpty":true,
+            "format": "html"
+          }
+        }
+      }
+    },
+    {
+      "id": "core://image",
+      "block": {
+        "name": "Core image block",
+        "description": "An inline image with caption, credit, and crop data",
+        "declares": {"type":"core/image"},
+        "data": {
+          "text": {
+            "allowEmpty": true
+          },
+          "html_caption": {
+            "format": "html",
+            "allowEmpty": true,
+            "optional": true
+          },
+          "alttext": {
+            "optional": true,
+            "allowEmpty": true
+          },
+          "credit": {
+            "allowEmpty": true
+          },
+          "height": {"format":"int"},
+          "width": {"format":"int"}
+        },
+        "meta": [
+          {"ref": "core://softcrop"}
+        ],
+        "links": [
+          {
+            "name": "Image reference",
+            "description": "Link to the image document",
+            "declares": {"rel":"image", "type":"core/image"},
+            "count": 1,
+            "attributes": {
+              "uuid": {},
+              "uri": {"glob":["core://image/*"]}
+            }
+          },
+          {
+            "name": "Author",
+            "description": "The author of the image",
+            "declares": {"rel":"author", "type":"core/author"},
+            "attributes": {
+              "title": {},
+              "uuid": {}
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "core://htmlembed",
+      "block": {
+        "name": "HTML embed",
+        "description": "A block of embedded HTML content",
+        "declares": {"type":"core/htmlembed"},
+        "data": {
+          "text":{
+            "description": "TODO: add 'anything goes' policy to revisor to be able to use the html format validation for free-form html",
+            "allowEmpty":true
+          }
+        }
+      }
+    },
+    {
+      "id": "core://unordered-list",
+      "block": {
+        "name": "Unordered list",
+        "description": "A bulleted list of text items",
+        "declares": {"type":"core/unordered-list"},
+        "content": [
+          {
+            "name": "List item",
+            "description": "A text item in the list",
+            "declares": {"type":"core/text"},
+            "data": {
+              "text":{
+                "allowEmpty":true,
+                "format": "html"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "core://ordered-list",
+      "block": {
+        "name": "Ordered list",
+        "description": "A numbered list of text items",
+        "declares": {"type":"core/ordered-list"},
+        "content": [
+          {
+            "name": "List item",
+            "description": "A text item in the list",
+            "declares": {"type":"core/text"},
+            "data": {
+              "text":{
+                "allowEmpty":true,
+                "format": "html"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "core://factbox",
+      "block": {
+        "name": "Factbox",
+        "description": "A factbox with title and rich text content",
+        "declares": {"type":"core/factbox"},
+        "attributes": {
+          "title": {},
+          "uuid": {
+            "allowEmpty":true,
+            "deprecated": {
+              "label": "factbox_source_uuid",
+              "doc": "Use source link instead"
+            }
+          }
+        },
+        "links": [
+          {
+            "name": "Source",
+            "description": "The source factbox document",
+            "declares": {"rel":"source"},
+            "maxCount": 1,
+            "attributes": {
+              "uuid": {}
+            }
+          }
+        ],
+        "data": {
+          "byline": {"optional":true},
+          "locally_changed": {
+            "format": "RFC3339",
+            "optional": true
+          },
+          "original_updated": {
+            "format": "RFC3339",
+            "optional": true
+          },
+          "original_version": {
+            "format": "int",
+            "optional": true
+          }
+        },
+        "content": [
+          {
+            "name": "Text",
+            "description": "A text paragraph in the factbox",
+            "declares": {"type":"core/text"},
+            "data": {
+              "text":{
+                "allowEmpty": true,
+                "format": "html"
+              }
+            }
+          },
+          {"ref": "core://ordered-list"},
+          {"ref": "core://unordered-list"},
+          {"ref": "core://table"}
+        ]
+      }
+    },
+    {
+      "id": "core://table",
+      "block": {
+        "name": "Table",
+        "description": "A data table with optional header and footer",
+        "declares": {"type":"core/table"},
+        "data": {
+          "caption": {"allowEmpty":true, "optional":true},
+          "meta": {"allowEmpty":true},
+          "thead": {
+            "format": "html",
+            "htmlPolicy": "table",
+            "optional": true
+          },
+          "tbody": {
+            "format": "html",
+            "htmlPolicy": "table"
+          },
+          "tfoot": {
+            "format": "html",
+            "htmlPolicy": "table",
+            "optional": true
+          }
+        }
+      }
+    }
+  ],
   "meta": [
+    {
+      "id": "core://definition",
+      "block": {
+        "name": "Definition",
+        "description": "A short or long definition of the entity",
+        "declares": {"type":"core/definition"},
+        "attributes": {
+          "role": {"enum": ["short", "long"]}
+        },
+        "data": {
+          "text": {"allowEmpty":true}
+        }
+      }
+    },
+    {
+      "id": "core://place-type",
+      "block": {
+        "name": "Place type",
+        "description": "The type of place",
+        "declares": {"type":"core/place-type"},
+        "attributes": {
+          "value": {
+            "enumReference": "core://place-types"
+          }
+        }
+      }
+    },
+    {
+      "id": "core://colour",
+      "block": {
+        "name": "Colour",
+        "description": "A colour association",
+        "declares": {"type":"core/colour"},
+        "attributes": {
+          "role": {
+            "description": "What role this colour fills, f.ex. 'dark-mode' or 'light-mode'.",
+            "optional": true
+          },
+          "value": {
+            "format": "colour",
+            "colourFormats": ["rgb"]
+          }
+        }
+      }
+    },
+    {
+      "id": "core://position",
+      "block": {
+        "name": "Position",
+        "description": "Geographic position as a WKT point",
+        "declares": {"type":"core/position"},
+        "attributes": {
+          "value": {
+            "format": "wkt",
+            "geometry": "point"
+          }
+        }
+      }
+    },
+    {
+      "id": "core://softcrop",
+      "block": {
+        "name": "Soft crop",
+        "description": "Image cropping hints with focus point and crop bounds",
+        "declares": {"type":"core/softcrop"},
+        "attributes": {
+          "name": {
+            "optional": true
+          }
+        },
+        "data": {
+          "focus": {
+            "optional": true,
+            "description": "Point that should be kept visible when cropping, as relative 'x y' coordinates in the format '0.5 0.5' where 1 is the width or height of the image.",
+            "pattern": "^\\d(\\.\\d+)? \\d(\\.\\d+)?$"
+          },
+          "crop": {
+            "optional": true,
+            "description": "Rect that sets the bounds for dynamic cropping, as relative 'x y width height' coordinates in the format '0.2 0.2 0.5 0.5' where 1 is the width or height of the image.",
+            "pattern": "^\\d(\\.\\d+)? \\d(\\.\\d+)? \\d(\\.\\d+)? \\d(\\.\\d+)?$"
+          }
+        }
+      }
+    },
     {
       "id": "core://note",
       "block": {
@@ -56,6 +489,50 @@
   ],
   "links": [
     {
+      "id": "core://assignment",
+      "block": {
+        "name": "Assignment",
+        "description": "A link to the assignment that the document was produced for",
+        "declares": {"type": "core/assignment", "rel":"assignment"},
+        "attributes": {
+          "uuid": {}
+        }
+      }
+    },
+    {
+      "id": "core://evidence/wikidata",
+      "block": {
+        "name": "Wikidata",
+        "description": "Link to Wikidata entry",
+        "declares": {"rel":"evidence", "type":"core/wikidata"},
+        "attributes": {"url":{}}
+      }
+    },
+    {
+      "id": "core://evidence/webpage",
+      "block": {
+        "name": "Webpage",
+        "description": "Link to a webpage about the person",
+        "declares": {"rel":"evidence", "type":"text/html"},
+        "attributes": {"url":{}}
+      }
+    },
+    {
+      "id": "core://place-relationship",
+      "block": {
+        "name": "Related place",
+        "description": "A relationship between places",
+        "declares": {"type":"core/place"},
+        "attributes": {
+          "rel": {
+            "enumReference": "core://place-relationships"
+          },
+          "title": {},
+          "uuid": {}
+        }
+      }
+    },
+    {
       "id": "core://story",
       "block": {
         "name": "Story",
@@ -63,7 +540,7 @@
         "declares": {"type": "core/story", "rel":"subject"},
         "attributes": {
           "uuid": {},
-          "title": {"allowEmpty":true}
+          "title": {"optional":true}
         }
       }
     },
@@ -75,9 +552,34 @@
         "declares": {"rel":"section", "type": "core/section"},
         "attributes": {
           "uuid": {},
-          "title": {"allowEmpty":true}
+          "title": {"optional":true}
         }
       }
+    },
+    {
+      "id": "core://person",
+      "block": {
+        "name": "Person",
+        "description": "A person that is a subject of the content",
+        "declares": {"type": "core/person", "rel":"subject"},
+        "attributes": {
+          "uuid": {},
+          "title": {}
+        }
+      }
+    },
+    {
+      "id": "core://category",
+      "block": {
+          "name": "Category",
+          "description": "A subject category for the category",
+          "declares": {"type": "core/category", "rel":"subject"},
+          "attributes": {
+            "uuid": {},
+            "uri": {"optional":true},
+            "title": {}
+          }
+        }
     },
     {
       "id": "core://byline",
@@ -92,6 +594,170 @@
         "data": {
           "firstName": {"optional":true},
           "lastName": {"optional":true}
+        }
+      }
+    },
+    {
+      "id": "core://article-source",
+      "block": {
+        "name": "Article source",
+        "description": "Points to the original article if this one is a copy",
+        "declares": {"type": "core/article", "rel":"source"},
+        "attributes": {
+          "uuid": {}
+        },
+        "data": {
+          "version": {
+            "format": "int",
+            "optional": true,
+            "description": "The version of the original article when it was copied"
+          }
+        }
+      }
+    },
+    {
+      "id": "core://content-source",
+      "block": {
+        "name": "Content source",
+        "description": "The entity that is the source of the content, e.g. the organisation that produced it.",
+        "declares": {"type": "core/content-source", "rel":"source"},
+        "attributes": {
+          "uuid": {
+            "optional": true
+          },
+          "uri": {},
+          "title": {}
+        }
+      }
+    },
+    {
+      "id": "core://content-source/document",
+      "block": {
+        "name": "Source document",
+        "description": "A document that has been used as a source",
+        "declares": {"rel":"source-document"},
+        "attributes": {
+          "uuid": {},
+          "type": {},
+          "uri": {
+            "optional": true
+          },
+          "title": {}
+        },
+        "data": {
+          "version": {
+            "name": "The version of the document that was used.",
+            "format": "int",
+            "optional": true
+          }
+        }
+      }
+    }
+  ],
+  "enums": [
+    {
+      "declare": "core://text-roles",
+      "name": "Text block roles",
+      "values": {
+        "heading-1": {},
+        "heading-2": {},
+        "heading-3": {},
+        "heading-4": {},
+        "preamble": {},
+        "blockquote": {}
+      }
+    },
+    {
+      "declare": "core://flash-text-roles",
+      "name": "Text block roles for flashes",
+      "values": {
+        "heading-1": {}
+      }
+    },
+    {
+      "declare": "core://place-types",
+      "name": "Place types",
+      "values": {
+        "country": {},
+	"county": {},
+	"municipality": {},
+	"city": {},
+	"state": {},
+	"poi": {},
+	"region": {},
+        "province": {}
+      }
+    },
+    {
+      "declare": "core://place-relationships",
+      "name": "Place relationships",
+      "values": {
+        "country": {},
+	"county": {},
+	"municipality": {},
+	"state": {},
+	"region": {},
+	"province": {},
+        "capital-of": {}
+      }
+    }
+  ],
+    "htmlPolicies": [
+    {
+      "name": "default",
+      "elements": {
+        "strong": {
+          "attributes": {
+            "id": {"optional":true}
+          }
+        },
+        "em": {
+          "attributes": {
+            "id": {"optional":true}
+          }
+        },
+        "a": {
+          "attributes": {
+            "id": {"optional":true},
+            "href": {"optional":true}
+          }
+        }
+      }
+    },
+    {
+      "name": "table",
+      "uses": "default",
+      "elements": {
+        "tr": {
+          "attributes": {
+            "id": {"optional":true}
+          }
+        },
+        "td": {
+          "attributes": {
+            "id": {"optional":true},
+            "colspan": {
+              "format": "int",
+              "optional":true
+            },
+            "rowspan": {
+              "format": "int",
+              "optional":true
+            }
+          }
+        },
+        "th": {
+          "attributes": {
+            "id": {"optional":true},
+            "colspan": {
+              "format": "int",
+              "optional":true
+            },
+            "rowspan": {
+              "format": "int",
+              "optional":true
+            }
+          }
         }
       }
     }

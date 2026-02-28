@@ -1,0 +1,30 @@
+{
+  "uuid": "938c6675-bdfb-4661-a635-04e41486212b",
+  "type": "core/person",
+  "uri": "core://person/938c6675-bdfb-4661-a635-04e41486212b",
+  "title": "Astrid Lindgren",
+  "meta": [
+    {
+      "type": "core/person",
+      "data": {
+        "firstName": "Astrid",
+        "lastName": "Lindgren"
+      }
+    },
+    {
+      "type": "core/definition",
+      "data": {
+        "text": "Svensk f\u00f6rfattare."
+      },
+      "role": "long"
+    }
+  ],
+  "links": [
+    {
+      "url": "https://www.wikidata.org/wiki/Q55767",
+      "type": "core/wikidata",
+      "rel": "evidence"
+    }
+  ],
+  "language": "sv-se"
+}

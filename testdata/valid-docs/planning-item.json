@@ -1,0 +1,70 @@
+{
+  "uuid": "d4e5f6a7-b8c9-0123-def0-234567890123",
+  "type": "core/planning-item",
+  "uri": "core://planning-item/d4e5f6a7-b8c9-0123-def0-234567890123",
+  "title": "Presskonferens om nya restriktioner",
+  "meta": [
+    {
+      "type": "core/newsvalue",
+      "value": "4"
+    },
+    {
+      "type": "core/description",
+      "role": "public",
+      "data": {
+        "text": "Regeringen h\u00e5ller presskonferens om nya restriktioner."
+      }
+    },
+    {
+      "type": "core/planning-item",
+      "data": {
+        "start_date": "2026-03-01",
+        "end_date": "2026-03-01",
+        "date_tz": "Europe/Stockholm"
+      }
+    },
+    {
+      "type": "tt/slugline",
+      "value": "restriktioner"
+    },
+    {
+      "id": "e5f6a7b8-c9d0-1234-ef01-345678901234",
+      "type": "core/assignment",
+      "title": "Text om presskonferens",
+      "data": {
+        "full_day": "true",
+        "start_date": "2026-03-01",
+        "end_date": "2026-03-01",
+        "date_tz": "Europe/Stockholm",
+        "public": "true"
+      },
+      "meta": [
+        {
+          "type": "core/assignment-type",
+          "value": "text"
+        },
+        {
+          "type": "tt/slugline",
+          "value": "restriktioner"
+        }
+      ],
+      "links": [
+        {
+          "uuid": "0730efa9-43f2-468d-979a-aaffc74d7582",
+          "type": "core/section",
+          "rel": "section",
+          "title": "Inrikes"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "uuid": "0730efa9-43f2-468d-979a-aaffc74d7582",
+      "type": "core/section",
+      "rel": "section",
+      "title": "Inrikes"
+    }
+  ],
+  "language": "sv-se"
+}

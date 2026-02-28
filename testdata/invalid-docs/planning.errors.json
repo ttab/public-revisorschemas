@@ -1,0 +1,280 @@
+[
+  {
+    "entity": [
+      {
+        "refType": "data attribute",
+        "name": "tentative"
+      },
+      {
+        "refType": "block",
+        "kind": "meta",
+        "type": "core/planning-item"
+      }
+    ],
+    "error": "unknown attribute"
+  },
+  {
+    "entity": [
+      {
+        "refType": "block",
+        "kind": "meta",
+        "index": 4,
+        "type": "core/description"
+      }
+    ],
+    "error": "undeclared block type or rel"
+  },
+  {
+    "entity": [
+      {
+        "refType": "attribute",
+        "name": "type"
+      },
+      {
+        "refType": "block",
+        "kind": "meta",
+        "index": 4,
+        "type": "core/description"
+      }
+    ],
+    "error": "undeclared block attribute"
+  },
+  {
+    "entity": [
+      {
+        "refType": "attribute",
+        "name": "role"
+      },
+      {
+        "refType": "block",
+        "kind": "meta",
+        "index": 4,
+        "type": "core/description"
+      }
+    ],
+    "error": "undeclared block attribute"
+  },
+  {
+    "entity": [
+      {
+        "refType": "data attribute",
+        "name": "text"
+      },
+      {
+        "refType": "block",
+        "kind": "meta",
+        "index": 4,
+        "type": "core/description"
+      }
+    ],
+    "error": "unknown attribute"
+  },
+  {
+    "entity": [
+      {
+        "refType": "block",
+        "kind": "link",
+        "index": 1,
+        "type": "core/author",
+        "rel": "assignee"
+      },
+      {
+        "refType": "block",
+        "kind": "meta",
+        "index": 5,
+        "type": "core/assignment"
+      }
+    ],
+    "error": "undeclared block type or rel"
+  },
+  {
+    "entity": [
+      {
+        "refType": "attribute",
+        "name": "uuid"
+      },
+      {
+        "refType": "block",
+        "kind": "link",
+        "index": 1,
+        "type": "core/author",
+        "rel": "assignee"
+      },
+      {
+        "refType": "block",
+        "kind": "meta",
+        "index": 5,
+        "type": "core/assignment"
+      }
+    ],
+    "error": "undeclared block attribute"
+  },
+  {
+    "entity": [
+      {
+        "refType": "attribute",
+        "name": "type"
+      },
+      {
+        "refType": "block",
+        "kind": "link",
+        "index": 1,
+        "type": "core/author",
+        "rel": "assignee"
+      },
+      {
+        "refType": "block",
+        "kind": "meta",
+        "index": 5,
+        "type": "core/assignment"
+      }
+    ],
+    "error": "undeclared block attribute"
+  },
+  {
+    "entity": [
+      {
+        "refType": "attribute",
+        "name": "title"
+      },
+      {
+        "refType": "block",
+        "kind": "link",
+        "index": 1,
+        "type": "core/author",
+        "rel": "assignee"
+      },
+      {
+        "refType": "block",
+        "kind": "meta",
+        "index": 5,
+        "type": "core/assignment"
+      }
+    ],
+    "error": "undeclared block attribute"
+  },
+  {
+    "entity": [
+      {
+        "refType": "attribute",
+        "name": "rel"
+      },
+      {
+        "refType": "block",
+        "kind": "link",
+        "index": 1,
+        "type": "core/author",
+        "rel": "assignee"
+      },
+      {
+        "refType": "block",
+        "kind": "meta",
+        "index": 5,
+        "type": "core/assignment"
+      }
+    ],
+    "error": "undeclared block attribute"
+  },
+  {
+    "entity": [
+      {
+        "refType": "attribute",
+        "name": "role"
+      },
+      {
+        "refType": "block",
+        "kind": "link",
+        "index": 1,
+        "type": "core/author",
+        "rel": "assignee"
+      },
+      {
+        "refType": "block",
+        "kind": "meta",
+        "index": 5,
+        "type": "core/assignment"
+      }
+    ],
+    "error": "undeclared block attribute"
+  },
+  {
+    "entity": [
+      {
+        "refType": "block",
+        "kind": "meta",
+        "index": 1,
+        "type": "core/description"
+      },
+      {
+        "refType": "block",
+        "kind": "meta",
+        "index": 5,
+        "type": "core/assignment"
+      }
+    ],
+    "error": "undeclared block type or rel"
+  },
+  {
+    "entity": [
+      {
+        "refType": "attribute",
+        "name": "type"
+      },
+      {
+        "refType": "block",
+        "kind": "meta",
+        "index": 1,
+        "type": "core/description"
+      },
+      {
+        "refType": "block",
+        "kind": "meta",
+        "index": 5,
+        "type": "core/assignment"
+      }
+    ],
+    "error": "undeclared block attribute"
+  },
+  {
+    "entity": [
+      {
+        "refType": "attribute",
+        "name": "role"
+      },
+      {
+        "refType": "block",
+        "kind": "meta",
+        "index": 1,
+        "type": "core/description"
+      },
+      {
+        "refType": "block",
+        "kind": "meta",
+        "index": 5,
+        "type": "core/assignment"
+      }
+    ],
+    "error": "undeclared block attribute"
+  },
+  {
+    "entity": [
+      {
+        "refType": "data attribute",
+        "name": "text"
+      },
+      {
+        "refType": "block",
+        "kind": "meta",
+        "index": 1,
+        "type": "core/description"
+      },
+      {
+        "refType": "block",
+        "kind": "meta",
+        "index": 5,
+        "type": "core/assignment"
+      }
+    ],
+    "error": "unknown attribute"
+  }
+]
