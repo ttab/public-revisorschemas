@@ -89,6 +89,26 @@
       ]
     },
     {
+      "name": "Category",
+      "description": "A category for content",
+      "declares": "core/category",
+      "meta": [
+        {"ref":"core://definition"}
+      ],
+      "links": [
+        {
+          "name": "Broader category",
+          "description": "A parent category in the hierarchy",
+          "declares": {"rel":"broader"},
+          "attributes": {
+            "type": {},
+            "uuid": {"optional":true},
+            "uri": {"optional":true}
+          }
+        }
+      ]
+    },
+    {
       "name": "Content source",
       "description": "A content source that can be credited",
       "declares": "core/content-source",
@@ -127,6 +147,18 @@
             "title": {"optional":true}
           }
         },
+        {"ref":"core://definition"}
+      ],
+      "links": [
+        {"ref":"core://evidence/wikidata"},
+        {"ref":"core://evidence/webpage"}
+      ]
+    },
+    {
+      "name": "Organisation",
+      "description": "An organisation entity",
+      "declares": "core/organisation",
+      "meta": [
         {"ref":"core://definition"}
       ],
       "links": [
